@@ -4,7 +4,7 @@
 </script>
 
 <style>
-  .search_input {
+  .search-input {
     width: 100%;
     max-width: 800px;
     border-radius: 4px;

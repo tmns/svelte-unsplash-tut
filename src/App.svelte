@@ -1,12 +1,13 @@
 <script>
   import Search from './Search.svelte';
+  import SearchResults from './SearchResults.svelte';
 
-  const UNSPLASH_ACCESS_KEY = '';
+  import { UNSPLASH_ACCESS_KEY } from './config';
 
   let searchQuery = '';
   let searchTerm = null;
   let totalPages = null;
-  let SearchResults = [];
+  let searchResults = [];
   let nextPage = 1;
   let isLoading = false;
 
@@ -41,7 +42,7 @@
         }
 
         searchResults = [...searchResults, ...data.results];
-        totalpages = data.total_pages;
+        totalPages = data.total_pages;
 
         if (nextPage < totalPages) {
           nextPage += 1;
@@ -74,4 +75,6 @@
   <h1>Unsplash Search App</h1>
 
   <Search bind:query={searchQuery} handleSubmit={handleSubmit} />
+
+  <SearchResults results={searchResults} />
 </main>

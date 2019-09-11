@@ -5,6 +5,7 @@
 </script>
 
 <style>
+  .search-results {
     list-style: none;
     display: grid;
     gap: 40px 20px;
@@ -14,6 +15,6 @@
 
 <ul class="search-results">
   {#each results as result (result.id)}
-    <PhotoCard photo={result}
+    <PhotoCard photo={result} />
   {/each}
 </ul>
